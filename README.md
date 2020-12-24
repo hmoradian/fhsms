@@ -153,7 +153,7 @@ FHSMS_PHONE_NUMBER=*******
 
 </div>
 <div dir="rtl">
-البته مي توانيد فايل پيکربندي موجود در پکيج را هم ويرايش و يا در فولدر پيکربندي پروژه پابليش کرده و مقادير را مستقيما و بدون ورود در فايل .env جايگزين نماييد
+البته مي توانيد فايل پيکربندي موجود در پکيج را هم ويرايش و يا در فولدر پيکربندي پروژه پابليش کرده و مقادير را مستقيما و بدون ورود در فايل env. جايگزين نماييد
 </div>
 
 ```php
@@ -167,14 +167,16 @@ FHSMS_PHONE_NUMBER=*******
 ...
 ```
 <div dir="rtl">
-    چنانچه از نسخه هاي پايين تر از 5.5 استفاده مي نمائيد ServiceProvider و aliase  زير  را به فايل config/app.php اضافه نمائيد:
+    چنانچه از نسخه هاي پايين تر از 5.5 استفاده مي نمائيد providers و aliases  زير  را به فايل config/app.php اضافه نمائيد:
  </div>  
  
  ```php
 // config/app.php
 ...
+'providers':
 Hmoradian\FhSms\FhSmsServiceProvider::class,
 ...
+'aliases':
 'FhSms' => Hmoradian\FhSms\Facades\FhSms::class,
 ...
 ```
@@ -186,7 +188,7 @@ Hmoradian\FhSms\FhSmsServiceProvider::class,
 </div>
 
 <div dir="rtl">
-    هم اکنون مي توانيد با استفاده از Facade اين پکيج (FhSms) به متدهاي پکيج دسترسي نماييد :
+    هم اکنون مي توانيد با استفاده از Facade اين پکيج (FhSms) به متدهاي پکيج دسترسي داشته باشيد :
 </div>
 
  ```php
@@ -204,7 +206,7 @@ if($result['result']['statusId'] === 4){
 }
     ...   
     
-echo  RayganSms::getData();
+echo  FhSms::getData();
     ...
 ```
 
