@@ -30,7 +30,7 @@ class Sms
      * @param string $phone_number
      */
     public function __construct($user_name, $password, $phone_number)
-    {        
+    {
         $this->user_name = $user_name;
         $this->password = $password;
         $this->phone_number = $phone_number;
@@ -38,9 +38,12 @@ class Sms
         $this->connect_timeout = 15;  //second
         $this->encode_options = JSON_THROW_ON_ERROR | JSON_UNESCAPED_UNICODE;
 
-        // $base_url = 'http://185.4.28.100/class/sms/restful/'; 
+        // $base_url = 'http://185.4.28.100/class/sms/restful/';
         // read from config in new version
-        $base_url = $this->app['config']['fhsms.services']['base_url'];
+        $base_url = app('config')['fhsms.services']['base_url'];
+        if(substr($base_url , -1) !== '/') {
+            $base_url = $base_url . '/';
+        }
 
         $this->url_get_data              = $base_url.'getData.php';
         $this->url_send_sms_one_to_many  = $base_url.'sendSms_OneToMany.php';
