@@ -1,5 +1,6 @@
 # FhSms
 FhSms API for send text messages
+v0.1.1
 
 <div dir="rtl" align="justify">
     اين پکيج امکان اتصال <a href="http://www.smshooshmand.com" target="_blank" >FhSms API</a> به فريم ورک هايي که جهت نصب پکيج ها از composer و از استاندارد PSR-4 جهت autoload نمودن کلاس ها استفاده مي نمايند همانند (Laravel,Yii,symfony) را فراهم مي سازد.<br>
@@ -145,6 +146,7 @@ echo $sms->getMessages();
 ```php
 // .env
 ...
+FHSMS_BASE_URL=*******
 FHSMS_USERNAME=*******
 FHSMS_PASSWORD=*******
 FHSMS_PHONE_NUMBER=*******
@@ -160,6 +162,7 @@ FHSMS_PHONE_NUMBER=*******
 // config/fhsms.php
 ...
     'services' => [
+        'base_url' => env('FHSMS_BASE_URL'),
         'user_name' => env('FHSMS_USERNAME'),
         'password' => env('FHSMS_PASSWORD'),
         'phone_number' => env('FHSMS_PHONE_NUMBER'),
@@ -220,7 +223,7 @@ echo  FhSms::getData();
     
 ## توليدکننده
 
-- [Hossein Moradian](https://github.com/hmoradian)
+- [Hossein Moradian](https://github.com/hmoradian) 09132101417
    
 ## لايسنس
 

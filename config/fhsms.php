@@ -14,6 +14,7 @@ return [
     |
     */
     'services' => [
+        'base_url' => env('FHSMS_BASE_URL'),
         'user_name' => env('FHSMS_USERNAME'),
         'password' => env('FHSMS_PASSWORD'),
         'phone_number' => env('FHSMS_PHONE_NUMBER'),
